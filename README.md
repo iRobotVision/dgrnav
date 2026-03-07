@@ -1,0 +1,31 @@
+# dgrnav
+A Universal Zero-Shot Goal Navigation via Dual-channel Graph Representation
+
+Abstract—Zero-shot goal navigation (ZSGN) methods directly
+apply MLLMs to reasoning and decision-making, achieving
+performance comparable to trained policies at a lower cost.
+Recently, Many studies on ZSGN have introduced cognitive map
+theory to achieve an active cognitive-reasoning process through
+symbolic cognitive maps. To address the issue of symbolization
+of cognitive maps, methods based on semantic scene graphs
+are proposed and online update frameworks are constructed.
+However, these approaches often lack effective utilization of
+spatial information. Some researches enhance the use of spatial
+information through VLMs, yet they rely on specialized module
+designs, making it difficult to extend them into an universal
+design and resulting in a lack of task generalization capability.
+In this work, based on the dual-channel theory of vision, an universal
+ZSGN framework via dual-channel graph representation,
+named DGR-Nav, is presented. Specifically, environmental cues
+are divided into a ”What” stream and a ”Where” stream, which
+are used to simultaneously maintain a semantic scene graph and
+a spatial region graph, mimicking the brain’s ventral and dorsal
+pathways. Based on subgraph clustering and region fusion, a representative
+graph with semantic edges and spatial edges is further
+built to enable dual-pathway scene graph updating. Extensive
+experiments demonstrate that the proposed method, referencing
+the value anchoring hypothesis, exhibits better interpretability
+and performance compared to recent ZSGN approaches, and can
+effectively accomplish real-world tasks.
+
+it is the demo code.
