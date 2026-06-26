@@ -1,8 +1,13 @@
 # DGR-Nav
-A Universal Zero-Shot Goal Navigation via Dual-channel Graph Representation
+DGR-Nav: Dual-Channel Graph Representation for Zero-Shot Goal Navigation
 
-Zero-shot goal navigation (ZSGN) methods directly apply MLLMs to reasoning and decision-making, achieving performance comparable to trained policies at a lower cost. Recently, Many studies on ZSGN have introduced cognitive map theory to achieve an active cognitive-reasoning process through symbolic cognitive maps. To address the issue of symbolization of cognitive maps, methods based on semantic scene graphs are proposed and online update frameworks are constructed. However, these approaches often lack effective utilization of spatial information. 
-Some researches enhance the use of spatial information through VLMs, yet they rely on specialized module designs, making it difficult to extend them into an universal design and resulting in a lack of task generalization capability. In this work, based on the dual-channel theory of vision, an universal ZSGN framework via dual-channel graph representation, named DGR-Nav, is presented. Specifically, environmental cues are divided into a "What" stream and a "Where" stream, which are used to simultaneously maintain a semantic scene graph and a spatial region graph, mimicking the brain's ventral and dorsal pathways. Based on subgraph clustering and region fusion, a representative graph with semantic edges and spatial edges is further built to enable dual-pathway scene graph updating. Extensive experiments demonstrate that the proposed method, referencing the value anchoring hypothesis, exhibits better interpretability and performance compared to recent ZSGN approaches, and can effectively accomplish real-world tasks.
+Zero-shot goal navigation requires an agent to search for goals specified by object categories, target images, or language descriptions without task-specific training. Existing scene-graph-based methods mainly rely on semantic relationships, while spatial structures among observed regions are often underutilized.
+Inspired by the dual-stream theory of visual processing, we propose DGR-Nav, a training-free zero-shot goal navigation framework based on dual-channel graph representation.
+DGR-Nav incrementally constructs a semantic `What' graph and a spatial `Where' graph from RGB-D observations. 
+Object clusters are summarized as representative nodes, and semantic relations are corrected using spatial constraints to form a compact spatio-semantic graph. 
+For goal exploration, DGR-Nav combines frontier distance, LLM-estimated object-goal proximity, and graph matching cues to select informative frontier targets.
+Experiments on the HM3D dataset show that DGR-Nav achieves competitive performance compared with recent universal zero-shot navigation baselines.
+Ablation studies further show the effectiveness of dual-channel graph construction, representative-node generation, region fusion, and LLM-guided frontier scoring. We further provide a real-world case study to examine the practical feasibility of deploying the proposed framework on a physical robot.
 
 ## Visualization
 ![](figs/q_results.png)
